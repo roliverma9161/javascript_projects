@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <style>
+        table {
+            width: 450px;
+            height: 450px;
+            margin: 20px auto;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        tr {
+            width: 450px;
+            height: 150px;
+        }
+        
+        td {
+            width: 200px;
+            height: 150px;
+        }
+        
+        table,
+        tr,
+        td {
+            border: 5px solid teal;
+            border-collapse: collapse;
+        }
+        
+        img {
+            height: 150px;
+            width: 150px;
+        }
+    </style>
+    <script src="code5.js">
+    </script>
+</head>
+
+<body id="page">
+    <h1 id="hint">Tic Tac Toe</h1>
+    <audio id="sound" src="sound1.wav"></audio>
+    <button onclick="restartgame()">Resatrt Game</button>
+    <table>
+        <tr>
+            <td onclick="ontap(this,0)">
+            </td>
+            <td onclick="ontap(this,1) ">
+
+            </td>
+            <td onclick="ontap(this,3) ">
+            </td>
+        </tr>
+        <tr>
+            <td onclick="ontap(this,4) ">
+            </td>
+            <td onclick="ontap(this,5) ">
+            </td>
+            <td onclick="ontap(this,6) ">
+            </td>
+        </tr>
+        <tr>
+            <td onclick="ontap(this,7) ">
+            </td>
+            <td onclick="ontap(this,8) ">
+            </td>
+            <td onclick="ontap(this,9) ">
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
