@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <script>
+        var bulbON = document.getElementById("on");
+        var bulbOff = document.getElementById("off");
+
+        function on() {
+            bulbOn.style.display = "block";
+            bulbOff.style.display = "none";
+        }
+
+        function off() {
+            bulbOn.style.display = "none";
+            bulbOff.style.display = "block";
+        } < style >
+            *
+            {
+                margin: 0;
+                padding: 0;
+                box - sizing: border - box;
+                font - family: 'poppins';
+                sans - serif;
+            }
+        body {
+            height: 100 px;
+            display: flex;
+            align - items: center;
+            justify - content: center;
+            background - color: #33333;
+        }
+
+        < /style>
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bulb">
+            <div id="off">
+                <img src="bulb off.jpg">
+            </div>
+            <div id="on">
+                <img src="bulb on.jpg">
+            </div>
+            <div class="switch">
+                <button onclick="on()"> ON
+                    </button>
+                <button onclick="off()"> OFF
+                    </button>
+            </div>
+        </div>
+</body>
+
+</html>
