@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <script>
+        function validatename() {
+            var a = t1.value;
+            if (a.length > 0) {
+
+                if (a.match(/^[a-zA-Z\s]+$/)) {
+
+
+                    t1.style.borderColor = "red";
+
+                } else {
+                    t1.style.borderColor = "red";
+                    return false;
+                }
+            } else {
+                t1.style.borderColor = "red";
+                return false;
+            }
+        }
+
+        function validatemobile() {
+            var a = t2.value;
+            if (a.length == 10) {
+
+                if (a.match(/^[0-9]+$/)) {
+                    t2.style.borderColor = "green";
+                    return true;
+                } else {
+                    t2.style.borderColor = "red";
+                    return false;
+                }
+            } else {
+                t2.style.borderColor = "red";
+                return false;
+
+            }
+        }
+
+        function validateform() {
+            var status = true;
+            if (validatename() == false) {
+                status = false;
+            }
+            if (validatemobile() == false) {
+                status = false;
+            }
+            return status;
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>Register Form</h1>
+    <form onsubmit="return validateform()">
+        enter your name
+        <input type="text" id="t1" />
+        <br/><br/> enter your mobile number
+        <input type="number" id="t2" />
+        <br/><br/>
+        <button>Submit</button>
+    </form>
+</body>
+
+</html>
