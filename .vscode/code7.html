@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Flag (Tiranga)</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f4f4f9;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Flag Outer Structure */
+    .flag {
+      width: 300px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    /* Tricolor Stripes */
+    .saffron {
+      background-color: #FF9933;
+      flex: 1;
+    }
+
+    .white {
+      background-color: #FFFFFF;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .green {
+      background-color: #138808;
+      flex: 1;
+    }
+
+    /* Ashoka Chakra Outer Ring */
+    .chakra {
+      width: 60px;
+      height: 60px;
+      border: 3px solid #000080;
+      border-radius: 50%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: rotateChakra 10s linear infinite;
+    }
+
+    /* Center Pin of Chakra */
+    .chakra::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background-color: #000080;
+      border-radius: 50%;
+      position: absolute;
+      z-index: 2;
+    }
+
+    /* Individual Spokes */
+    .spoke {
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      background-color: #000080;
+    }
+
+    /* Continuous Rotation Animation */
+    @keyframes rotateChakra {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Flag Structure -->
+  <div class="flag">
+    <div class="saffron"></div>
+    <div class="white">
+      <div class="chakra" id="chakra"></div>
+    </div>
+    <div class="green"></div>
+  </div>
+
+  <!-- JavaScript to generate 24 spokes -->
+  <script>
+    const chakra = document.getElementById('chakra');
+    const totalSpokes = 24;
+
+    // Generate 12 overlapping full lines rotated by 15° increments (12 lines x 2 ends = 24 spokes)
+    for (let i = 0; i < totalSpokes / 2; i++) {
+      const spoke = document.createElement('div');
+      spoke.className = 'spoke';
+      spoke.style.transform = `rotate(${i * 15}deg)`;
+      chakra.appendChild(spoke);
+    }
+  </script>
+
+</body>
+</html>
